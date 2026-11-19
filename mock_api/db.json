@@ -1,0 +1,59 @@
+
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Toronto Music Festival",
+      "location": "Nathan Phillips Square, Toronto",
+      "startsAt": "2026-11-22T19:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900",
+      "latitude": 43.6525,
+      "longitude": -79.3835
+    },
+    {
+      "id": "2",
+      "title": "Food & Culture Festival",
+      "location": "Harbourfront Centre, Toronto",
+      "startsAt": "2026-11-24T12:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900",
+      "latitude": 43.6388,
+      "longitude": -79.3817
+    },
+    {
+      "id": "3",
+      "title": "Toronto Tech Meetup",
+      "location": "Toronto Reference Library",
+      "startsAt": "2026-11-27T18:30:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=900",
+      "latitude": 43.6719,
+      "longitude": -79.3868
+    },
+    {
+      "id": "4",
+      "title": "Art & Design Exhibition",
+      "location": "Distillery Historic District, Toronto",
+      "startsAt": "2026-11-29T14:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900",
+      "latitude": 43.6503,
+      "longitude": -79.3596
+    },
+    {
+      "id": "5",
+      "title": "Winter Community Market",
+      "location": "Evergreen Brick Works, Toronto",
+      "startsAt": "2026-12-05T11:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900",
+      "latitude": 43.6848,
+      "longitude": -79.3657
+    },
+    {
+      "id": "6",
+      "title": "Independent Film Night",
+      "location": "TIFF Lightbox, Toronto",
+      "startsAt": "2026-12-10T19:30:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=900",
+      "latitude": 43.6467,
+      "longitude": -79.3901
+    }
+  ]
+}
