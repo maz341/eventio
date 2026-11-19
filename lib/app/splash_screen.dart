@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'navigation/main_shell.dart';
+import 'navigation/main_navigation.dart';
 import 'theme/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,9 +26,9 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(milliseconds: 1600), () {
       if (!mounted) return;
 
-      Navigator.of(
-        context,
-      ).pushReplacement(MaterialPageRoute(builder: (_) => const MainShell()));
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const MainNavigation()),
+      );
     });
   }
 

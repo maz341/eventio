@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../features/events/presentation/views/events_screen.dart';
 import '../../features/events/presentation/views/bookmarks_screen.dart';
 
-class MainShell extends StatefulWidget {
-  const MainShell({super.key});
+class MainNavigation extends StatefulWidget {
+  const MainNavigation({super.key});
 
   @override
-  State<MainShell> createState() => _MainShellState();
+  State<MainNavigation> createState() => _MainNavigationState();
 }
 
-class _MainShellState extends State<MainShell> {
+class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
   @override

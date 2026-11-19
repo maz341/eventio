@@ -1,3 +1,5 @@
+import 'package:eventio/core/database/app_database.dart';
+import 'package:eventio/features/events/data/source/event_local_service.dart';
 import 'package:eventio/features/events/data/source/event_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -24,20 +26,31 @@ class EventioApp extends StatelessWidget {
           create: (_) => http.Client(),
           dispose: (_, client) => client.close(),
         ),
+
+        Provider<AppDatabase>(create: (_) => AppDatabase()),
+
+        Provider<EventsLocalService>(
+          create: (context) => EventsLocalService(context.read<AppDatabase>()),
+        ),
+
         Provider<EventsRepository>(
           create: (context) => EventsRepository(
             apiService: EventsApiService(
               client: context.read<http.Client>(),
               baseUrl: apiBaseUrl,
             ),
+            localService: context.read<EventsLocalService>(),
           ),
         ),
+
         ChangeNotifierProvider<EventsViewModel>(
           lazy: false,
-          create: (context) =>
-              EventsViewModel(context.read<EventsRepository>())..loadEvents(),
+          create: (context) => EventsViewModel(context.read<EventsRepository>())
+            ..loadEvents()
+            ..loadBookmarks(),
         ),
       ],
+
       child: MaterialApp(
         title: 'Eventio',
         debugShowCheckedModeBanner: false,
