@@ -3,21 +3,21 @@
   "events": [
     {
       "id": "1",
-      "title": "Toronto Music Festival",
-      "location": "Nathan Phillips Square, Toronto",
-      "startsAt": "2026-11-22T19:00:00-05:00",
-      "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900",
-      "latitude": 43.6525,
-      "longitude": -79.3835
-    },
-    {
-      "id": "2",
       "title": "Food & Culture Festival",
       "location": "Harbourfront Centre, Toronto",
       "startsAt": "2026-11-24T12:00:00-05:00",
       "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900",
       "latitude": 43.6388,
       "longitude": -79.3817
+    },
+    {
+      "id": "2",
+      "title": "Toronto Music Festival",
+      "location": "Nathan Phillips Square, Toronto",
+      "startsAt": "2026-11-22T19:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900",
+      "latitude": 43.6525,
+      "longitude": -79.3835
     },
     {
       "id": "3",
