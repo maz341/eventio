@@ -3,7 +3,7 @@
   "events": [
     {
       "id": "1",
-      "title": "Food & Culture Festival",
+      "title": "Coffee & Bites at Harbourfront",
       "location": "Harbourfront Centre, Toronto",
       "startsAt": "2026-11-24T12:00:00-05:00",
       "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900",
@@ -12,7 +12,7 @@
     },
     {
       "id": "2",
-      "title": "Toronto Music Festival",
+      "title": "Sunday Live Music at the Square",
       "location": "Nathan Phillips Square, Toronto",
       "startsAt": "2026-11-22T19:00:00-05:00",
       "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900",
@@ -21,13 +21,14 @@
     },
     {
       "id": "3",
-      "title": "Toronto Tech Meetup",
-      "location": "Toronto Reference Library",
+      "title": "Code & Coffee: November Meetup",
+      "location": "Toronto Reference Library, Yonge Street",
       "startsAt": "2026-11-27T18:30:00-05:00",
       "imageUrl": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=900",
       "latitude": 43.6719,
       "longitude": -79.3868
     },
+    
     {
       "id": "4",
       "title": "Art & Design Exhibition",
@@ -54,6 +55,32 @@
       "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=900",
       "latitude": 43.6467,
       "longitude": -79.3901
+    },{
+      "id": "7",
+      "title": "Food & Culture Festival ",
+      "location": "Harbourfront Centre, Toronto",
+      "startsAt": "2026-11-24T12:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900",
+      "latitude": 43.6388,
+      "longitude": -79.3817
+    },
+    {
+      "id": "8",
+      "title": "Toronto Music Festival",
+      "location": "Nathan Phillips Square, Toronto",
+      "startsAt": "2026-11-22T19:00:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900",
+      "latitude": 43.6525,
+      "longitude": -79.3835
+    },
+    {
+      "id": "9",
+      "title": "Toronto Tech Meetup",
+      "location": "Toronto Reference Library",
+      "startsAt": "2026-11-27T18:30:00-05:00",
+      "imageUrl": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=900",
+      "latitude": 43.6719,
+      "longitude": -79.3868
     }
   ]
 }
