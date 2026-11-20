@@ -55,9 +55,9 @@ I used MVVM with Repository Pattern. ViewModel handles screen state, while Repos
 
 I kept location, background tasks and other common services separate so the code is easier to manage.
 
-![Architecture](docs/architecture.png)
+![Architecture](docs/architecture_drawio.png)
 
-![Sequence Diagram](docs/sequence-diagram.png)
+![Sequence Diagram](docs/sequence_drawio.png)
 
 ## Caching and Background Refresh
 
