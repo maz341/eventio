@@ -1,4 +1,5 @@
 import 'package:eventio/core/database/app_database.dart';
+import 'package:eventio/core/location/location_service.dart';
 import 'package:eventio/features/events/data/source/event_local_service.dart';
 import 'package:eventio/features/events/data/source/event_repository.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +44,12 @@ class EventioApp extends StatelessWidget {
           ),
         ),
 
+        Provider<LocationService>(create: (_) => LocationService()),
         ChangeNotifierProvider<EventsViewModel>(
           lazy: false,
-          create: (context) => EventsViewModel(context.read<EventsRepository>())
+          create: (context) => EventsViewModel(context.read<EventsRepository>(),
+                  context.read<LocationService>(),
+                )
             ..loadEvents()
             ..loadBookmarks(),
         ),

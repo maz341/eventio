@@ -11,10 +11,14 @@ class MapsLauncher {
     final destination = '$latitude,$longitude';
 
     final url = defaultTargetPlatform == TargetPlatform.iOS
-        ? Uri.https('maps.apple.com', '/', {'daddr': destination})
+        ? Uri.https('maps.apple.com', '/', {
+            'daddr': destination,
+            'dirflg': 'd',
+          })
         : Uri.https('www.google.com', '/maps/dir/', {
             'api': '1',
             'destination': destination,
+            'travelmode': 'driving',
           });
 
     return launchUrl(url, mode: LaunchMode.externalApplication);

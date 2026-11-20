@@ -11,12 +11,14 @@ class EventCard extends StatelessWidget {
     this.isBookmarked = false,
     this.onTap,
     this.onBookmarkPressed,
+    this.distanceKm,
   });
 
   final Event event;
   final bool isBookmarked;
   final VoidCallback? onTap;
   final VoidCallback? onBookmarkPressed;
+  final double? distanceKm;
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +115,27 @@ class EventCard extends StatelessWidget {
                           ),
                         ),
                       ),
+
+                      if (distanceKm != null) ...[
+                        const SizedBox(height: 8),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.near_me_outlined,
+                              size: 16,
+                              color: AppColors.coral,
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              '${distanceKm!.toStringAsFixed(1)} km away',
+                              style: const TextStyle(
+                                color: AppColors.peach,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ],
                   ),
                 ],

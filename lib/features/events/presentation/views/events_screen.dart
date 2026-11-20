@@ -53,6 +53,40 @@ class EventsScreen extends StatelessWidget {
                     'Upcoming Events',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
+
+                  const SizedBox(height: 12),
+
+                  TextButton.icon(
+                    onPressed: viewModel.isLocating
+                        ? null
+                        : viewModel.loadLocation,
+                    icon: viewModel.isLocating
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.my_location),
+                    label: Text(
+                      viewModel.isLocating
+                          ? 'Locating...'
+                          : viewModel.hasLocation
+                          ? 'Update location'
+                          : 'Use my location',
+                    ),
+                  ),
+
+                  if (viewModel.locationError != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        viewModel.locationError!,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.error,
+                        ),
+                      ),
+                    ),
+
                   if (viewModel.isStale) ...[
                     const SizedBox(height: 12),
                     const Text(
@@ -81,7 +115,7 @@ class EventsScreen extends StatelessWidget {
 
           return EventCard(
             event: event,
-
+            distanceKm: viewModel.distanceTo(event),
             isBookmarked: viewModel.isBookmarked(event.id),
 
             onBookmarkPressed: viewModel.isBookmarkSaving(event.id)

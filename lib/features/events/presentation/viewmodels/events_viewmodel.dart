@@ -1,10 +1,12 @@
+import 'package:eventio/core/location/distance_calculator.dart';
+import 'package:eventio/core/location/location_service.dart';
 import 'package:eventio/features/events/data/source/event_repository.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../domain/models/event.dart';
 
 class EventsViewModel extends ChangeNotifier {
-  EventsViewModel(this._repository);
+EventsViewModel(this._repository, this._locationService);
 
   final EventsRepository _repository;
 
@@ -12,6 +14,19 @@ class EventsViewModel extends ChangeNotifier {
   bool _isLoading = false;
   bool _isStale = false;
   String? _error;
+
+
+final LocationService _locationService;
+  final DistanceCalculator _distanceCalculator = const DistanceCalculator();
+
+  AppCoordinates? _userLocation;
+  bool _isLocating = false;
+  String? _locationError;
+
+  bool get isLocating => _isLocating;
+  bool get hasLocation => _userLocation != null;
+  String? get locationError => _locationError;
+
 
   List<Event> _bookmarkedEvents = [];
   Set<String> _bookmarkedIds = {};
@@ -102,4 +117,36 @@ class EventsViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+Future<void> loadLocation() async {
+    if (_isLocating) return;
+
+    _isLocating = true;
+    _locationError = null;
+    notifyListeners();
+
+    try {
+      _userLocation = await _locationService.getCurrentLocation();
+    } on LocationFailure catch (error) {
+      _locationError = error.message;
+    } catch (error) {
+      debugPrint('Location error: $error');
+      _locationError = 'Unable to get your location.';
+    } finally {
+      _isLocating = false;
+      notifyListeners();
+    }
+  }
+
+  double? distanceTo(Event event) {
+    final location = _userLocation;
+
+    if (location == null) return null;
+
+    return _distanceCalculator.kilometersBetween(
+      location,
+      AppCoordinates(latitude: event.latitude, longitude: event.longitude),
+    );
+  }
+
 }

@@ -56,6 +56,7 @@ class BookmarksScreen extends StatelessWidget {
 
         return EventCard(
           event: event,
+          distanceKm: viewModel.distanceTo(event),
           isBookmarked: viewModel.isBookmarked(event.id),
           onBookmarkPressed: viewModel.isBookmarkSaving(event.id)
               ? null
