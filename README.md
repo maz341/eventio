@@ -1,3 +1,11 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/images/logo_white.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/images/logo_black.png">
+    <img src="assets/images/logo_black.png" alt="Eventio" width="240">
+  </picture>
+</p>
+
 # Eventio
 
 Eventio is a Flutter app I built for the Rogers Mobile Developer technical assessment. Users can explore nearby events, save bookmarks, view event details and get directions.
@@ -16,6 +24,15 @@ Eventio is a Flutter app I built for the Rogers Mobile Developer technical asses
 ## Tech Stack
 
 Flutter, Dart, Provider, MVVM, SQLite (sqflite), JSON Server, http, geolocator, url_launcher, cached_network_image and workmanager.
+
+
+## Demo Video
+
+[Watch Eventio Demo](https://youtu.be/lE6ozuLI03w)
+
+
+
+
 
 ## How to Run
 
